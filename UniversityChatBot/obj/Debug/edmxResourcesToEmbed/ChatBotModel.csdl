@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChatbotDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Acc">
+    <Key>
+      <PropertyRef Name="AccId" />
+    </Key>
+    <Property Name="AccId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="query1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="query2" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="query3" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="query4" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="Int32" />
+    <Property Name="reply" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="addquery">
+    <Key>
+      <PropertyRef Name="addqueriesId" />
+    </Key>
+    <Property Name="addqueriesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="query1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Answer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Cabin">
+    <Key>
+      <PropertyRef Name="CabinId" />
+    </Key>
+    <Property Name="CabinId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="classroom">
+    <Key>
+      <PropertyRef Name="classroomId" />
+    </Key>
+    <Property Name="classroomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K6" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K7" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="contactquery">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="query1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="DesignationId" />
+    </Key>
+    <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="doublereply">
+    <Key>
+      <PropertyRef Name="doublereplyId" />
+    </Key>
+    <Property Name="doublereplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="query1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reply" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="EmailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K6" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="faculaty">
+    <Key>
+      <PropertyRef Name="faculatiesId" />
+    </Key>
+    <Property Name="faculatiesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="generalreply">
+    <Key>
+      <PropertyRef Name="generalreplyId" />
+    </Key>
+    <Property Name="generalreplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Greply" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Invalid">
+    <Key>
+      <PropertyRef Name="InvalidId" />
+    </Key>
+    <Property Name="InvalidId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Answer" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="namequery">
+    <Key>
+      <PropertyRef Name="namequeriesId" />
+    </Key>
+    <Property Name="namequeriesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="query1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Que">
+    <Key>
+      <PropertyRef Name="QuesId" />
+    </Key>
+    <Property Name="QuesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="QuestionPaper">
+    <Key>
+      <PropertyRef Name="QuestionPapersId" />
+    </Key>
+    <Property Name="QuestionPapersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K6" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ReferenceBook">
+    <Key>
+      <PropertyRef Name="ReferenceBookId" />
+    </Key>
+    <Property Name="ReferenceBookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="specialization">
+    <Key>
+      <PropertyRef Name="specializationId" />
+    </Key>
+    <Property Name="specializationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="SubjectsId" />
+    </Key>
+    <Property Name="SubjectsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K6" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="timetable">
+    <Key>
+      <PropertyRef Name="timetableId" />
+    </Key>
+    <Property Name="timetableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="K4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reply" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="whatdoublereply">
+    <Key>
+      <PropertyRef Name="whatdoublereplyId" />
+    </Key>
+    <Property Name="whatdoublereplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="query1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="query2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="query3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reply" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="wheredoublereply">
+    <Key>
+      <PropertyRef Name="wheredoublereplyId" />
+    </Key>
+    <Property Name="wheredoublereplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="query1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reply" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="whodoublereply">
+    <Key>
+      <PropertyRef Name="whodoublereplyId" />
+    </Key>
+    <Property Name="whodoublereplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="query1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="query3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="query4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reply" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Accs" EntityType="Self.Acc" />
+    <EntitySet Name="addqueries" EntityType="Self.addquery" />
+    <EntitySet Name="Answers" EntityType="Self.Answer" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="Cabins" EntityType="Self.Cabin" />
+    <EntitySet Name="classrooms" EntityType="Self.classroom" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="contactqueries" EntityType="Self.contactquery" />
+    <EntitySet Name="Designations" EntityType="Self.Designation" />
+    <EntitySet Name="doublereplies" EntityType="Self.doublereply" />
+    <EntitySet Name="Emails" EntityType="Self.Email" />
+    <EntitySet Name="faculaties" EntityType="Self.faculaty" />
+    <EntitySet Name="generalreplies" EntityType="Self.generalreply" />
+    <EntitySet Name="Invalids" EntityType="Self.Invalid" />
+    <EntitySet Name="namequeries" EntityType="Self.namequery" />
+    <EntitySet Name="Ques" EntityType="Self.Que" />
+    <EntitySet Name="QuestionPapers" EntityType="Self.QuestionPaper" />
+    <EntitySet Name="ReferenceBooks" EntityType="Self.ReferenceBook" />
+    <EntitySet Name="specializations" EntityType="Self.specialization" />
+    <EntitySet Name="Subjects" EntityType="Self.Subject" />
+    <EntitySet Name="timetables" EntityType="Self.timetable" />
+    <EntitySet Name="whatdoublereplies" EntityType="Self.whatdoublereply" />
+    <EntitySet Name="wheredoublereplies" EntityType="Self.wheredoublereply" />
+    <EntitySet Name="whodoublereplies" EntityType="Self.whodoublereply" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

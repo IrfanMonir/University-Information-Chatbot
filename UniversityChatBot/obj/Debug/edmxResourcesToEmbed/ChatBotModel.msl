@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChatbotDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="ChatbotDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accs">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Acc">
+        <MappingFragment StoreEntitySet="Acc">
+          <ScalarProperty Name="AccId" ColumnName="AccId" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+          <ScalarProperty Name="query2" ColumnName="query2" />
+          <ScalarProperty Name="query3" ColumnName="query3" />
+          <ScalarProperty Name="query4" ColumnName="query4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="addqueries">
+      <EntityTypeMapping TypeName="ChatbotDBModel.addquery">
+        <MappingFragment StoreEntitySet="addqueries">
+          <ScalarProperty Name="addqueriesId" ColumnName="addqueriesId" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="ChatbotDBModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="ChatbotDBModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="ChatbotDBModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="ChatbotDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cabins">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Cabin">
+        <MappingFragment StoreEntitySet="Cabin">
+          <ScalarProperty Name="CabinId" ColumnName="CabinId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classrooms">
+      <EntityTypeMapping TypeName="ChatbotDBModel.classroom">
+        <MappingFragment StoreEntitySet="classroom">
+          <ScalarProperty Name="classroomId" ColumnName="classroomId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="K6" ColumnName="K6" />
+          <ScalarProperty Name="K7" ColumnName="K7" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contactqueries">
+      <EntityTypeMapping TypeName="ChatbotDBModel.contactquery">
+        <MappingFragment StoreEntitySet="contactqueries">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Designation">
+        <MappingFragment StoreEntitySet="Designation">
+          <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doublereplies">
+      <EntityTypeMapping TypeName="ChatbotDBModel.doublereply">
+        <MappingFragment StoreEntitySet="doublereply">
+          <ScalarProperty Name="doublereplyId" ColumnName="doublereplyId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+          <ScalarProperty Name="query2" ColumnName="query2" />
+          <ScalarProperty Name="query3" ColumnName="query3" />
+          <ScalarProperty Name="query4" ColumnName="query4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="K6" ColumnName="K6" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="faculaties">
+      <EntityTypeMapping TypeName="ChatbotDBModel.faculaty">
+        <MappingFragment StoreEntitySet="faculaties">
+          <ScalarProperty Name="faculatiesId" ColumnName="faculatiesId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="generalreplies">
+      <EntityTypeMapping TypeName="ChatbotDBModel.generalreply">
+        <MappingFragment StoreEntitySet="generalreply">
+          <ScalarProperty Name="generalreplyId" ColumnName="generalreplyId" />
+          <ScalarProperty Name="Greply" ColumnName="Greply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invalids">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Invalid">
+        <MappingFragment StoreEntitySet="Invalid">
+          <ScalarProperty Name="InvalidId" ColumnName="InvalidId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namequeries">
+      <EntityTypeMapping TypeName="ChatbotDBModel.namequery">
+        <MappingFragment StoreEntitySet="namequeries">
+          <ScalarProperty Name="namequeriesId" ColumnName="namequeriesId" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ques">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Que">
+        <MappingFragment StoreEntitySet="Ques">
+          <ScalarProperty Name="QuesId" ColumnName="QuesId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionPapers">
+      <EntityTypeMapping TypeName="ChatbotDBModel.QuestionPaper">
+        <MappingFragment StoreEntitySet="QuestionPapers">
+          <ScalarProperty Name="QuestionPapersId" ColumnName="QuestionPapersId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="K6" ColumnName="K6" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferenceBooks">
+      <EntityTypeMapping TypeName="ChatbotDBModel.ReferenceBook">
+        <MappingFragment StoreEntitySet="ReferenceBook">
+          <ScalarProperty Name="ReferenceBookId" ColumnName="ReferenceBookId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specializations">
+      <EntityTypeMapping TypeName="ChatbotDBModel.specialization">
+        <MappingFragment StoreEntitySet="specialization">
+          <ScalarProperty Name="specializationId" ColumnName="specializationId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="ChatbotDBModel.Subject">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="SubjectsId" ColumnName="SubjectsId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="K6" ColumnName="K6" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timetables">
+      <EntityTypeMapping TypeName="ChatbotDBModel.timetable">
+        <MappingFragment StoreEntitySet="timetable">
+          <ScalarProperty Name="timetableId" ColumnName="timetableId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="whatdoublereplies">
+      <EntityTypeMapping TypeName="ChatbotDBModel.whatdoublereply">
+        <MappingFragment StoreEntitySet="whatdoublereply">
+          <ScalarProperty Name="whatdoublereplyId" ColumnName="whatdoublereplyId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+          <ScalarProperty Name="query2" ColumnName="query2" />
+          <ScalarProperty Name="query3" ColumnName="query3" />
+          <ScalarProperty Name="query4" ColumnName="query4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wheredoublereplies">
+      <EntityTypeMapping TypeName="ChatbotDBModel.wheredoublereply">
+        <MappingFragment StoreEntitySet="wheredoublereply">
+          <ScalarProperty Name="wheredoublereplyId" ColumnName="wheredoublereplyId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+          <ScalarProperty Name="query2" ColumnName="query2" />
+          <ScalarProperty Name="query3" ColumnName="query3" />
+          <ScalarProperty Name="query4" ColumnName="query4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="whodoublereplies">
+      <EntityTypeMapping TypeName="ChatbotDBModel.whodoublereply">
+        <MappingFragment StoreEntitySet="whodoublereply">
+          <ScalarProperty Name="whodoublereplyId" ColumnName="whodoublereplyId" />
+          <ScalarProperty Name="Sr" ColumnName="Sr" />
+          <ScalarProperty Name="query1" ColumnName="query1" />
+          <ScalarProperty Name="query2" ColumnName="query2" />
+          <ScalarProperty Name="query3" ColumnName="query3" />
+          <ScalarProperty Name="query4" ColumnName="query4" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="ChatbotDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

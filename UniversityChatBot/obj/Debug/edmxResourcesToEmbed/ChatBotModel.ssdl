@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChatbotDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Acc">
+    <Key>
+      <PropertyRef Name="AccId" />
+    </Key>
+    <Property Name="AccId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="query1" Type="varchar" MaxLength="30" />
+    <Property Name="query2" Type="varchar" MaxLength="35" />
+    <Property Name="query3" Type="varchar" MaxLength="35" />
+    <Property Name="query4" Type="varchar" MaxLength="35" />
+    <Property Name="keywords" Type="int" />
+    <Property Name="reply" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="addqueries">
+    <Key>
+      <PropertyRef Name="addqueriesId" />
+    </Key>
+    <Property Name="addqueriesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="query1" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" />
+    <Property Name="Answer" Type="nvarchar(max)" />
+    <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cabin">
+    <Key>
+      <PropertyRef Name="CabinId" />
+    </Key>
+    <Property Name="CabinId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="classroom">
+    <Key>
+      <PropertyRef Name="classroomId" />
+    </Key>
+    <Property Name="classroomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="K5" Type="varchar" MaxLength="500" />
+    <Property Name="K6" Type="varchar" MaxLength="500" />
+    <Property Name="K7" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="contactqueries">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="query1" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="DesignationId" />
+    </Key>
+    <Property Name="DesignationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="50" />
+    <Property Name="K5" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="doublereply">
+    <Key>
+      <PropertyRef Name="doublereplyId" />
+    </Key>
+    <Property Name="doublereplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="query1" Type="varchar" MaxLength="500" />
+    <Property Name="query2" Type="varchar" MaxLength="500" />
+    <Property Name="query3" Type="varchar" MaxLength="500" />
+    <Property Name="query4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="reply" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="EmailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="K5" Type="varchar" MaxLength="500" />
+    <Property Name="K6" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="faculaties">
+    <Key>
+      <PropertyRef Name="faculatiesId" />
+    </Key>
+    <Property Name="faculatiesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="generalreply">
+    <Key>
+      <PropertyRef Name="generalreplyId" />
+    </Key>
+    <Property Name="generalreplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Greply" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Invalid">
+    <Key>
+      <PropertyRef Name="InvalidId" />
+    </Key>
+    <Property Name="InvalidId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="5000" />
+    <Property Name="Answer" Type="varchar" MaxLength="5000" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="namequeries">
+    <Key>
+      <PropertyRef Name="namequeriesId" />
+    </Key>
+    <Property Name="namequeriesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="query1" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Ques">
+    <Key>
+      <PropertyRef Name="QuesId" />
+    </Key>
+    <Property Name="QuesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="1000" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="QuestionPapers">
+    <Key>
+      <PropertyRef Name="QuestionPapersId" />
+    </Key>
+    <Property Name="QuestionPapersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="K5" Type="varchar" MaxLength="500" />
+    <Property Name="K6" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+    <Property Name="Link" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="ReferenceBook">
+    <Key>
+      <PropertyRef Name="ReferenceBookId" />
+    </Key>
+    <Property Name="ReferenceBookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="specialization">
+    <Key>
+      <PropertyRef Name="specializationId" />
+    </Key>
+    <Property Name="specializationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="SubjectsId" />
+    </Key>
+    <Property Name="SubjectsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="K5" Type="varchar" MaxLength="500" />
+    <Property Name="K6" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="timetable">
+    <Key>
+      <PropertyRef Name="timetableId" />
+    </Key>
+    <Property Name="timetableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="K1" Type="varchar" MaxLength="500" />
+    <Property Name="K2" Type="varchar" MaxLength="500" />
+    <Property Name="K3" Type="varchar" MaxLength="500" />
+    <Property Name="K4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="Reply" Type="varchar" MaxLength="5000" />
+    <Property Name="Link" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="whatdoublereply">
+    <Key>
+      <PropertyRef Name="whatdoublereplyId" />
+    </Key>
+    <Property Name="whatdoublereplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="query1" Type="varchar" MaxLength="20" />
+    <Property Name="query2" Type="varchar" MaxLength="20" />
+    <Property Name="query3" Type="varchar" MaxLength="500" />
+    <Property Name="query4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="reply" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="wheredoublereply">
+    <Key>
+      <PropertyRef Name="wheredoublereplyId" />
+    </Key>
+    <Property Name="wheredoublereplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="query1" Type="varchar" MaxLength="500" />
+    <Property Name="query2" Type="varchar" MaxLength="500" />
+    <Property Name="query3" Type="varchar" MaxLength="500" />
+    <Property Name="query4" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="reply" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="whodoublereply">
+    <Key>
+      <PropertyRef Name="whodoublereplyId" />
+    </Key>
+    <Property Name="whodoublereplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sr" Type="varchar" MaxLength="50" />
+    <Property Name="query1" Type="varchar" MaxLength="500" />
+    <Property Name="query2" Type="varchar" MaxLength="500" />
+    <Property Name="query3" Type="varchar" MaxLength="200" />
+    <Property Name="query4" Type="varchar" MaxLength="200" />
+    <Property Name="keywords" Type="varchar" MaxLength="50" />
+    <Property Name="reply" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ChatbotDBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc" EntityType="Self.Acc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="addqueries" EntityType="Self.addqueries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cabin" EntityType="Self.Cabin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="classroom" EntityType="Self.classroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contactqueries" EntityType="Self.contactqueries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doublereply" EntityType="Self.doublereply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="faculaties" EntityType="Self.faculaties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="generalreply" EntityType="Self.generalreply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invalid" EntityType="Self.Invalid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="namequeries" EntityType="Self.namequeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ques" EntityType="Self.Ques" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionPapers" EntityType="Self.QuestionPapers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceBook" EntityType="Self.ReferenceBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="specialization" EntityType="Self.specialization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="timetable" EntityType="Self.timetable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="whatdoublereply" EntityType="Self.whatdoublereply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wheredoublereply" EntityType="Self.wheredoublereply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="whodoublereply" EntityType="Self.whodoublereply" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
